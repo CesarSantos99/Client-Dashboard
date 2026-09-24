@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard para gerenciamento de clientes">
+    <title>ClientDash - Gestão de Clientes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>CD</span>
+            <h1>ClientDash</h1>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-link active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>👥</span>
+                Clientes
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>📈</span>
+                Relatórios
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>⚙️</span>
+                Configurações
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>ClientDash</p>
+            <span>Versão 1.0</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="header-title">
+                <h2>Dashboard</h2>
+                <p>Bem-vindo de volta, César!</p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notification-button" aria-label="Notificações">
+                    🔔
+                </button>
+
+                <div class="user">
+
+                    <div class="user-avatar">
+                        CS
+                    </div>
+
+                    <div class="user-info">
+                        <strong>César Santos</strong>
+                        <span>Administrador</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================== INDICADORES ==================== -->
+        <section class="statistics">
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div class="stat-content">
+                    <span>Total de clientes</span>
+                    <strong>128</strong>
+                    <small>+12% este mês</small>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div class="stat-content">
+                    <span>Clientes ativos</span>
+                    <strong>96</strong>
+                    <small>+8% este mês</small>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    🆕
+                </div>
+
+                <div class="stat-content">
+                    <span>Novos clientes</span>
+                    <strong>18</strong>
+                    <small>Este mês</small>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    💰
+                </div>
+
+                <div class="stat-content">
+                    <span>Receita estimada</span>
+                    <strong>R$ 12.450</strong>
+                    <small>+15% este mês</small>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================== SEÇÃO DE CLIENTES ==================== -->
+        <section class="clients-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h3>Clientes</h3>
+                    <p>Gerencie todos os clientes cadastrados.</p>
+                </div>
+
+                <button class="primary-button" id="newClientButton">
+                    + Novo cliente
+                </button>
+
+            </div>
+
+
+            <!-- ==================== BUSCA E FILTROS ==================== -->
+            <div class="filters">
+
+                <div class="search">
+
+                    <label for="searchClient">
+                        Buscar cliente
+                    </label>
+
+                    <input type="search" id="searchClient" placeholder="Digite o nome do cliente...">
+
+                </div>
+
+
+                <div class="filter">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            Todos
+                        </option>
+
+                        <option value="active">
+                            Ativo
+                        </option>
+
+                        <option value="pending">
+                            Pendente
+                        </option>
+
+                        <option value="inactive">
+                            Inativo
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== TABELA ==================== -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Cliente</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Status</th>
+                            <th>Data de cadastro</th>
+                            <th>Ações</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="clientsTable">
+
+                        <!-- CLIENTE 1 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="client">
+
+                                    <div class="client-avatar">
+                                        JS
+                                    </div>
+
+                                    <div>
+                                        <strong>João Silva</strong>
+                                        <span>Empresa XYZ</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                joao@email.com
+                            </td>
+
+                            <td>
+                                (37) 99999-9999
+                            </td>
+
+                            <td>
+
+                                <span class="status active">
+                                    Ativo
+                                </span>
+
+                            </td>
+
+                            <td>
+                                15/09/2026
+                            </td>
+
+                            <td>
+
+                                <button class="action-button" aria-label="Ações do cliente">
+                                    ⋮
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CLIENTE 2 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="client">
+
+                                    <div class="client-avatar">
+                                        MS
+                                    </div>
+
+                                    <div>
+                                        <strong>Maria Souza</strong>
+                                        <span>Studio Maria</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                maria@email.com
+                            </td>
+
+                            <td>
+                                (37) 98888-8888
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pendente
+                                </span>
+
+                            </td>
+
+                            <td>
+                                12/09/2026
+                            </td>
+
+                            <td>
+
+                                <button class="action-button" aria-label="Ações do cliente">
+                                    ⋮
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CLIENTE 3 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="client">
+
+                                    <div class="client-avatar">
+                                        CA
+                                    </div>
+
+                                    <div>
+                                        <strong>Carlos Almeida</strong>
+                                        <span>Almeida Serviços</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                carlos@email.com
+                            </td>
+
+                            <td>
+                                (37) 97777-7777
+                            </td>
+
+                            <td>
+
+                                <span class="status inactive">
+                                    Inativo
+                                </span>
+
+                            </td>
+
+                            <td>
+                                05/09/2026
+                            </td>
+
+                            <td>
+
+                                <button class="action-button" aria-label="Ações do cliente">
+                                    ⋮
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== MODAL NOVO CLIENTE ==================== -->
+    <div class="modal" id="clientModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <h3>Novo cliente</h3>
+                    <p>Cadastre um novo cliente.</p>
+                </div>
+
+                <button class="close-modal" id="closeModal" aria-label="Fechar">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="clientForm">
+
+                <div class="form-group">
+
+                    <label for="clientName">
+                        Nome completo
+                    </label>
+
+                    <input type="text" id="clientName" name="clientName" placeholder="Digite o nome" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="clientEmail">
+                        E-mail
+                    </label>
+
+                    <input type="email" id="clientEmail" name="clientEmail" placeholder="cliente@email.com" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="clientPhone">
+                        Telefone
+                    </label>
+
+                    <input type="tel" id="clientPhone" name="clientPhone" placeholder="(00) 00000-0000" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="clientStatus">
+                        Status
+                    </label>
+
+                    <select id="clientStatus" name="clientStatus">
+
+                        <option value="active">
+                            Ativo
+                        </option>
+
+                        <option value="pending">
+                            Pendente
+                        </option>
+
+                        <option value="inactive">
+                            Inativo
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button type="button" class="secondary-button" id="cancelButton">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        Cadastrar cliente
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
